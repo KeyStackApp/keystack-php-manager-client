@@ -1,4 +1,5 @@
 {
+    "name": "keystackapp/keystack-php-manager-client",
     "description": "This project is a PHP client library for interacting with the KeyStack Manager API. It provides convenient methods for managing and communicating with KeyStack services, leveraging PSR-7, PSR-18, and HTTPlug standards for HTTP messaging and client abstraction. The library is suitable for integration into PHP applications requiring secure and efficient access to KeyStack Manager functionalities.",
     "keywords": [
         "keystack-manager",
