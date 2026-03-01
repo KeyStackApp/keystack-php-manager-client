@@ -12,6 +12,8 @@ Method | HTTP request | Description
 [**getActivations()**](ManagerApi.md#getActivations) | **GET** /v1/licenses/{internalLicenseId}/activations | 
 [**getAllLicenses()**](ManagerApi.md#getAllLicenses) | **GET** /v1/licenses | 
 [**getLicense()**](ManagerApi.md#getLicense) | **GET** /v1/licenses/{internalLicenseId} | 
+[**listManifestRecords()**](ManagerApi.md#listManifestRecords) | **GET** /v1/manifests | 
+[**readManifestRecord()**](ManagerApi.md#readManifestRecord) | **GET** /v1/manifest/{cacheKey} | 
 [**updateLicense()**](ManagerApi.md#updateLicense) | **PATCH** /v1/licenses/{internalLicenseId} | 
 
 
@@ -463,6 +465,119 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\KeyStack\Manager\Model\LicenseRecord**](../Model/LicenseRecord.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `listManifestRecords()`
+
+```php
+listManifestRecords(): \KeyStack\Manager\Model\ListManifestRecords200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: Bearer
+$config = KeyStack\Manager\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new KeyStack\Manager\Api\ManagerApi(
+    // If you want use custom http client, pass your client which implements `Psr\Http\Client\ClientInterface`.
+    // This is optional, `Psr18ClientDiscovery` will be used to find http client. For instance `GuzzleHttp\Client` implements that interface
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->listManifestRecords();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ManagerApi->listManifestRecords: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\KeyStack\Manager\Model\ListManifestRecords200Response**](../Model/ListManifestRecords200Response.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `readManifestRecord()`
+
+```php
+readManifestRecord($cacheKey): \KeyStack\Manager\Model\AddManifestRecord200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: Bearer
+$config = KeyStack\Manager\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new KeyStack\Manager\Api\ManagerApi(
+    // If you want use custom http client, pass your client which implements `Psr\Http\Client\ClientInterface`.
+    // This is optional, `Psr18ClientDiscovery` will be used to find http client. For instance `GuzzleHttp\Client` implements that interface
+    new GuzzleHttp\Client(),
+    $config
+);
+$cacheKey = test_manifest_key_1234; // string
+
+try {
+    $result = $apiInstance->readManifestRecord($cacheKey);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ManagerApi->readManifestRecord: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cacheKey** | **string**|  |
+
+### Return type
+
+[**\KeyStack\Manager\Model\AddManifestRecord200Response**](../Model/AddManifestRecord200Response.md)
 
 ### Authorization
 

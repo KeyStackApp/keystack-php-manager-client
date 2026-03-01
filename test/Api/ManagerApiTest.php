@@ -168,6 +168,30 @@ class ManagerApiTest extends TestCase
     }
 
     /**
+     * Test case for listManifestRecords
+     *
+     * .
+     *
+     */
+    public function testListManifestRecords()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for readManifestRecord
+     *
+     * .
+     *
+     */
+    public function testReadManifestRecord()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for updateLicense
      *
      * .
